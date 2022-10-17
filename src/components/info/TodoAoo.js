@@ -18,16 +18,16 @@ const TodoAoo = ({ item, onUpdate, onDelete }) => {
       setIsEdit(false)
     }
     return (
-      <form className='flex flex-row justify-center space-x-8 m-4 p-4 border-2 border-black '>
+      <form className='flex flex-row justify-center m-4 '>
         <input
           type='text'
-          className='border-2 border-black bg-slate-50 rounded-md m-2 p-1'
+          className='border-2 border-blue-500 bg-slate-50 rounded-md mr-4 p-2'
           onChange={handleChange}
           value={newValue}
         />
         <button
           onSubmit={handleSubmit}
-          className='border-2 border-black p-2 rounded-md'
+          className='border-2 border-black p-2 rounded-md bg-blue-500 text-white'
           onClick={handleClickUpdate}
         >
           Update
@@ -38,20 +38,25 @@ const TodoAoo = ({ item, onUpdate, onDelete }) => {
 
   const TodoElement = () => {
     return (
-      <div className='flex flex-row justify-center space-x-8 m-4 p-4 border-2 border-black '>
-        <p>{item.title}</p>
-        <button
-          className='border-2 border-black p-2 rounded-md'
-          onClick={() => setIsEdit(true)}
-        >
-          Edit
-        </button>
-        <button
-          className='border-2 border-black p-2 rounded-md'
-          onClick={e => onDelete(item.id)}
-        >
-          Delete
-        </button>
+      <div className='grid grid-cols-2 justify-center m-4 p-4 gap-5  '>
+        <div className='block text-right'>
+          <span className=' text-xl font-bold'>{item.title}</span>
+        </div>
+
+        <div className='space-x-4'>
+          <button
+            className='border-2 border-black p-2 rounded-md bg-blue-500 text-white'
+            onClick={() => setIsEdit(true)}
+          >
+            Edit
+          </button>
+          <button
+            className='border-2 border-black p-2 rounded-md bg-red-600 text-white'
+            onClick={e => onDelete(item.id)}
+          >
+            Delete
+          </button>
+        </div>
       </div>
     )
   }

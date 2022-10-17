@@ -2,7 +2,7 @@ import { useState } from 'react'
 import TodoAoo from './TodoAoo'
 
 const Todo = () => {
-  const [title, setTitle] = useState('Text your todo.')
+  const [title, setTitle] = useState('Text what you need to do')
   const [todos, setTodos] = useState([])
 
   const handleChange = e => {
@@ -39,7 +39,7 @@ const Todo = () => {
             onChange={handleChange}
             className='border-2 border-black rounded-md w-96 h-auto p-2'
             value={title}
-            placeholder='Text your todo'
+            placeholder='enter another activity'
           />
           <input
             onClick={handleSubmit}
